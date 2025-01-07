@@ -12,18 +12,20 @@ gulp.task('delete', function () {
 });
 
 gulp.task('resize-images', function () {
+    // First, copy originals to fulls without resizing
+    gulp.src('images/*.*')
+        .pipe(gulp.dest('images/fulls'));
+
+    // Now generate thumbnails
     return gulp.src('images/*.*')
         .pipe(imageResize({
-            width: 1024,
-            imageMagick: true
-        }))
-        .pipe(gulp.dest('images/fulls'))
-        .pipe(imageResize({
-            width: 512,
-            imageMagick: true
+            width: 1024,  // or your desired thumbnail width
+            quality: 1,
+            imageMagick: false
         }))
         .pipe(gulp.dest('images/thumbs'));
 });
+
 
 // compile scss to css
 gulp.task('sass', function () {
