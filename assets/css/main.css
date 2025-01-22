@@ -1545,24 +1545,9 @@
 			position: relative;
 		}
 
-			#main .thumb:after {
-				background-image: -moz-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: -webkit-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: -ms-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				-moz-pointer-events: none;
-				-webkit-pointer-events: none;
-				-ms-pointer-events: none;
-				pointer-events: none;
-				background-size: cover;
-				content: '';
-				display: block;
-				height: 100%;
-				left: 0;
-				position: absolute;
-				top: 0;
-				width: 100%;
-			}
+#main .thumb:after {
+	content: none; /* This disables the overlay */
+}
 
 			#main .thumb > .image {
 				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
